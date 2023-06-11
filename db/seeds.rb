@@ -9,37 +9,81 @@ category2 = Category.create(name: "Adventure")
 category3 = Category.create(name: "Sports")
 
 puts "Seeding games..."
-game1 = Game.create(title: "Elden Ring",
-description: "Description 1",
- thumbnail_url: "https://example.com/game1.jpg",
-  video_url: "https://example.com/games1.mp4",
-  )
+game1 = Game.create(
+  title: "Elden Ring",
+  description: "Embark on an epic journey in a world of fantasy and mystery. Uncover the secrets of the Elden Ring and face formidable challenges in this highly anticipated action RPG.",
+  thumbnail_url: "Elden ring.jpg",
+  video_url: "Elden Ring【GMV】_ The beginning of an era.mp4"
+)
 
 game2 = Game.create(
   title: "Diablo IV",
-description: "Description 2",
- thumbnail_url: "https://example.com/game2.jpg",
-  video_url: "https://example.com/games2.mp4",
-  )
+  description: "Descend into the depths of darkness as you battle demonic forces in the highly anticipated Diablo IV. Prepare to face epic bosses, discover legendary loot, and forge your own path in a world plagued by evil.",
+  thumbnail_url: "Diablo iv.jpg",
+  video_url: "DIABLO 4 - Official Lilith .mp4"
+)
 
-game3 = Game.create(title: "World of Warcraft",
- description: "Description 3",
- thumbnail_url: "https://example.com/game4.jpg",
-  video_url: "https://example.com/games3.mp4",
-  )
+game3 = Game.create(
+  title: "World of Warcraft",
+  description: "Enter the vast and immersive world of Azeroth in World of Warcraft. Join millions of players in an epic online adventure, where you can explore breathtaking landscapes, engage in epic battles, and forge lasting friendships.",
+  thumbnail_url: "World of Warcraft.jpg",
+  video_url: "World of Warcraft.mp4"
+)
 
-game4 = Game.create(title: "The witcher 3",
- description: "Description 4",
- thumbnail_url: "https://example.com/game4.jpg",
- video_url: "https://example.com/games4.mp4",
-  )
+game4 = Game.create(
+  title: "The Witcher 3",
+  description: "Step into the shoes of Geralt of Rivia, a legendary monster hunter, in The Witcher 3. Embark on a captivating open-world adventure filled with thrilling quests, intense combat, and morally challenging choices.",
+  thumbnail_url: "The witcher 3.jpg",
+  video_url: "https://example.com/games4.mp4"
+)
 
 game5 = Game.create(
-  title: "Nier:Automata",
-   description: "Description 5",
-thumbnail_url: "https://example.com/game4.jpg",
- video_url: "https://example.com/games4.mp4",
-  )
+  title: "Nier: Automata",
+  description: "Uncover the mysteries of a post-apocalyptic world in Nier: Automata. Join android warriors in a breathtaking action RPG experience, where humanity's fate hangs in the balance and choices shape the future.",
+  thumbnail_url: "Nier Automata - PlayStation.jpeg",
+  video_url: "https://example.com/games5.mp4"
+)
+game6 = Game.create(
+  title: "Call of Duty",
+  description: "Answer the call of duty and experience adrenaline-pumping warfare like never before. Engage in intense multiplayer battles, gripping single-player campaigns, and cooperative missions in this iconic first-person shooter franchise.",
+  thumbnail_url: "Call of Duty.jpg",
+  video_url: "https://example.com/games6.mp4"
+)
+
+game7 = Game.create(
+  title: "Cyberpunk 2077",
+  description: "Immerse yourself in the neon-lit streets of Night City in Cyberpunk 2077. Become a mercenary outlaw and navigate a dystopian future filled with high-tech weaponry, cybernetic enhancements, and morally complex choices.",
+  thumbnail_url: "Cyberpunk 2077.jpg",
+  video_url: "https://example.com/games7.mp4"
+)
+
+game8 = Game.create(
+  title: "Fifa 14",
+  description: "Experience the thrill of the beautiful game in FIFA 14. Play as your favorite football teams, compete in realistic matches, and showcase your skills in the world's most popular sport.",
+  thumbnail_url: "Fifa14.jpg",
+  video_url: "https://example.com/games8.mp4"
+)
+
+game9 = Game.create(
+  title: "Final Fantasy XV",
+  description: "Embark on an epic journey in the fantastical world of Final Fantasy XV. Join a band of heroes on a mission to save their kingdom, encounter magical creatures, and engage in strategic battles in this beloved RPG.",
+  thumbnail_url: "Final fantasy xv.jpg",
+  video_url: "https://example.com/games9.mp4"
+)
+
+game10 = Game.create(
+  title: "GTA",
+  description: "Enter the sprawling open-world sandbox of GTA and experience a life of crime and adventure. Engage in high-speed chases, heists, and explore a vibrant urban landscape filled with opportunities and dangers at every turn.",
+  thumbnail_url: "GTA.jpg",
+  video_url: "https://example.com/games10.mp4"
+)
+
+game11 = Game.create(
+  title: "Need for Speed",
+  description: "Buckle up and get ready for high-octane racing action in Need for Speed. Push your limits, customize your cars, and compete against skilled drivers in thrilling street races and exhilarating pursuits.",
+  thumbnail_url: "Need For Speed.jpg",
+  video_url: "https://example.com/games11.mp4"
+)
 
 
   puts "Seeding reviews..."
@@ -90,20 +134,20 @@ thumbnail_url: "https://example.com/game4.jpg",
 
 trailer1 = Trailer.create(
   title: "Official Trailer 1",
-  video_url: "https://example.com/trailer1.mp4",
+  video_url: "Elden Ring【GMV】_ The beginning of an era.mp4",
   game_id: 1
 )
 
 
 trailer2 = Trailer.create(
   title: "Gameplay Trailer",
-  video_url: "https://example.com/trailer3.mp4",
+  video_url: "DIABLO 4 - Official Lilith .mp4",
   game_id: 2
 )
 
 trailer3 = Trailer.create(
   title: "Gameplay Trailer",
-  video_url: "https://example.com/trailer3.mp4",
+  video_url: "World of Warcraft.mp4",
   game_id: 3
 )
 
