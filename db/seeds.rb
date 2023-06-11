@@ -129,26 +129,25 @@ game11 = Game.create(
     user_id: 3,
     game_id: 2
   )
-
   puts "Seeding trailers..."
 
-trailer1 = Trailer.create(
-  title: "Official Trailer 1",
-  video_url: "Elden Ring【GMV】_ The beginning of an era.mp4",
-  game_id: 1
-)
+  trailer1 = Trailer.create(
+    title: "Official Trailer 1",
+    video_url: "/trailers/Elden Ring【GMV】_ The beginning of an era.mp4",
+    game_id: 1
+  )
 
+  trailer2 = Trailer.create(
+    title: "Gameplay Trailer",
+    video_url: "/trailers/DIABLO 4 - Official Lilith .mp4",
+    game_id: 2
+  )
 
-trailer2 = Trailer.create(
-  title: "Gameplay Trailer",
-  video_url: "DIABLO 4 - Official Lilith .mp4",
-  game_id: 2
-)
+  trailer3 = Trailer.create(
+    title: "Gameplay Trailer",
+    video_url: "/trailers/World of Warcraft.mp4",
+    game_id: 3
+  )
 
-trailer3 = Trailer.create(
-  title: "Gameplay Trailer",
-  video_url: "World of Warcraft.mp4",
-  game_id: 3
-)
+  puts "✅ Done seeding!"
 
-puts "✅ Done seeding!"

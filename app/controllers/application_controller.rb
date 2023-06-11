@@ -71,23 +71,18 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/trailers/:id' do
-    trailer = Trailer.find(params[:id])
+    trailer = Trailer.find_by(id: params[:id])
 
     if trailer
-      # Retrieve the associated game
-      game = trailer.game
-
-      # Prepare the response JSON
       response = {
         id: trailer.id,
         title: trailer.title,
         video_url: trailer.video_url,
         game: {
-          id: game.id,
-          title: game.title,
-          description: game.description,
-          thumbnail_url: game.thumbnail_url
-          # Include other game attributes as needed
+          id: trailer.game.id,
+          title: trailer.game.title,
+          description: trailer.game.description,
+          thumbnail_url: trailer.game.thumbnail_url
         }
       }
 
@@ -97,5 +92,25 @@ class ApplicationController < Sinatra::Base
       'Trailer not found'
     end
   end
+
+  get '/trailers' do
+    trailers = Trailer.all.map do |trailer|
+      {
+        id: trailer.id,
+        title: trailer.title,
+        video_url: trailer.video_url,
+        game: {
+          id: trailer.game.id,
+          title: trailer.game.title,
+          description: trailer.game.description,
+          thumbnail_url: trailer.game.thumbnail_url
+        }
+      }
+    end
+
+    trailers.to_json
+  end
+
+
 
 end
