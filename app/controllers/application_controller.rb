@@ -1,7 +1,9 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+  set :public_folder, File.dirname(__FILE__) + 'public'
 
-  get '/images/:imageName' do
+
+  get '/gameimages/:imageName' do
     image_name = params[:imageName]
     image_path = File.join('public/gameimages', image_name)
 
@@ -9,24 +11,32 @@ class ApplicationController < Sinatra::Base
       content_type 'image/jpeg' if image_name.downcase.end_with?('.jpg', '.jpeg')
       send_file(image_path)
     else
-      status 404
-      'Image not found'
+      not_found
     end
   end
 
-  get '/videos/:videoName' do
-    video_name = params[:videoName]
-    video_path = File.join('public/trailers', video_name)
+  get '/games/:id/videos' do
+    game = Game.find(params[:id])
 
-    if File.exist?(video_path)
-      content_type 'video/mp4' if video_name.downcase.end_with?('.mp4')
-      send_file(video_path)
+    if game
+      videos = game.videos.map do |video|
+        {
+          id: video.id,
+          title: video.title,
+          video_url: "/trailers/#{video.id}.mp4"  # Update the video URL path here
+        }
+      end
+
+      videos.to_json
     else
-      status 404
-      'Video not found'
+      not_found
     end
   end
 
+  not_found do
+    status 404
+    'Not found'
+  end
 
   get '/users' do
     users = User.all
