@@ -14,6 +14,20 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/videos/:videoName' do
+    video_name = params[:videoName]
+    video_path = File.join('public/trailers', video_name)
+
+    if File.exist?(video_path)
+      content_type 'video/mp4' if video_name.downcase.end_with?('.mp4')
+      send_file(video_path)
+    else
+      status 404
+      'Video not found'
+    end
+  end
+
+
   get '/users' do
     users = User.all
     users.to_json
@@ -51,7 +65,7 @@ class ApplicationController < Sinatra::Base
         id: game.id,
         title: game.title,
         description: game.description,
-        thumbnail_url: "/images/#{game.thumbnail_url}",
+        thumbnail_url: "/images/gameimages/#{game.id}.jpg",
         video_url: game.video_url
       }
     end
@@ -64,7 +78,7 @@ class ApplicationController < Sinatra::Base
       id: game.id,
       title: game.title,
       description: game.description,
-      thumbnail_url: "/images/#{game.thumbnail_url}",
+      thumbnail_url: "/images/gameimages/#{game.id}.jpg",
       video_url: game.video_url
     }
     game_with_image.to_json
